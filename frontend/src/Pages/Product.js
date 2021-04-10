@@ -14,16 +14,18 @@ export const Product = (props) => {
                 </Col>
                 <Col>
                     <Card style={{ width: '18rem' }}>
-                        <Card.Body>
+                        <Card.Body style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between'
+                            }}>
                             <Card.Text>
                             {product.name}
                             </Card.Text>
                             <Card.Text>
                                 Description: {product.description}
                             </Card.Text>
-                        </Card.Body>
-                        <Card.Body>
-                            <Card.Text>
+                            <Card.Text style={{textAlign:'justify'}}>
                             Price: ${product.price}
                             </Card.Text>
                             <Card.Text>

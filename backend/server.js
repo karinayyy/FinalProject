@@ -1,7 +1,15 @@
-const express = require('express')
+const express = require('express');
+const data = require('./data.js');
 
-const PORT = process.env.PORT || 5000
-const app = express()
-app.listen(PORT, () => {
-    console.log('Server hes been started on port 5000')
+const app = express();
+
+app.get('/api/products', (req, res) => {
+    res.send(data.products);
 })
+
+app.get('/', (req, res) => {
+    res.send('Server is ready');
+})
+app.listen(5000, () => {
+    console.log('Server at 5000');
+}) 
