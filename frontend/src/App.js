@@ -21,10 +21,10 @@ function App() {
         <NaviBar />
 
         <Switch>
-            <Route path="/cart/:id?" component={Cart} />
+            <Route path="/users" component={Users} />
             <Route exact path="/" component={Home} />
             <Route path="/product/:id" component={Product} />
-            <Route path="/users" component={Users} />
+            <Route path="/cart/:id?" component={Cart} />
         </Switch>
       </Router>
     </>

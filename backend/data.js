@@ -2,7 +2,7 @@ module.exports = data = {
     products: [
         {
             _id: '1',
-            name: 'T-123',
+            name: 'T-Shirt',
             category: 'Shirts',
             image: '/images/p-1.png',
             price: 120,

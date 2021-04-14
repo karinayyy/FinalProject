@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import  { Navbar, Nav, Button, Container, Modal, Form }  from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -17,6 +18,9 @@ export function NaviBar(){
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
+    const cart = useSelector(state => state.cart)
+    const {cartItems} = cart
 
     return(
         <>
@@ -28,8 +32,10 @@ export function NaviBar(){
                         <Navbar.Collapse id="responsive-Navbar-nav">
                             <Nav className="mr-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                                <Nav.Link><Link to="/cart/:id">Cart</Link></Nav.Link>
-                                <Nav.Link><Link to="/about">About</Link></Nav.Link>
+                                <Nav.Link><Link to="/cart/:id">Cart 
+                                                            {cartItems.length > 0 && (<span>{cartItems.length}</span>)}
+                                </Link></Nav.Link>
+                                <Nav.Link><Link to="/users">Users</Link></Nav.Link>
                             </Nav>
                             <Nav>
                                 <Button variant="primary" className="mr-2" onClick={handleShow}>Log In</Button>
