@@ -11,8 +11,8 @@ import {
 
 import {Home} from './Pages/Home'
 import {Users} from './Pages/Users'
-import {About} from './Pages/About'
 import {Product} from './Pages/Product'
+import {Cart} from './Pages/Cart'
 
 function App() {
   return (
@@ -21,10 +21,10 @@ function App() {
         <NaviBar />
 
         <Switch>
+            <Route path="/cart/:id?" component={Cart} />
             <Route exact path="/" component={Home} />
             <Route path="/product/:id" component={Product} />
             <Route path="/users" component={Users} />
-            <Route path="/about" component={About} />
         </Switch>
       </Router>
     </>

@@ -28,7 +28,7 @@ export function NaviBar(){
                         <Navbar.Collapse id="responsive-Navbar-nav">
                             <Nav className="mr-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                                <Nav.Link><Link to="/users">Users</Link></Nav.Link>
+                                <Nav.Link><Link to="/cart/:id">Cart</Link></Nav.Link>
                                 <Nav.Link><Link to="/about">About</Link></Nav.Link>
                             </Nav>
                             <Nav>
