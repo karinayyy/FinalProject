@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import MessageBox from '../Components/MessageBox'
-import { addToCart } from '../redux/actions/cartActions'
+import { addToCart, removeFromCart } from '../redux/actions/cartActions'
 
 export const Cart = (props) => {
     const productId = props.match.params.id
@@ -17,10 +17,11 @@ export const Cart = (props) => {
     }, [dispatch, productId, quantity])
     const removeFromCartHandler = (id) => {
         //delete action
+        dispatch(removeFromCart(id))
     }
 
     const checkoutHandler = () => {
-        props.history.push('/sinin?redirect=shipping')
+        props.history.push('/signin?redirect=shipping')
     }
     return( 
         <div>

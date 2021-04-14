@@ -32,7 +32,7 @@ export function NaviBar(){
                         <Navbar.Collapse id="responsive-Navbar-nav">
                             <Nav className="mr-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                                <Nav.Link><Link to="/cart/:id">Cart 
+                                <Nav.Link><Link to="/cart">Cart 
                                                             {cartItems.length > 0 && (<span>{cartItems.length}</span>)}
                                 </Link></Nav.Link>
                                 <Nav.Link><Link to="/users">Users</Link></Nav.Link>
