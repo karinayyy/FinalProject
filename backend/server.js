@@ -4,8 +4,9 @@ const data = require('./data.js');
 const userRouter = require('./routes/userRouter');
 
 const app = express();
-mongoose.connect('mongodb://localhost/fullstack', {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/fullstack', {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
     useCreateIndex: true
 })
 
