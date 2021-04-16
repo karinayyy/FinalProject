@@ -3,8 +3,13 @@ const mongoose = require('mongoose');
 // const data = require('./data.js');
 const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 const app = express();
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/fullstack', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
