@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import  { Navbar, Nav, Button, Container, Modal, Form }  from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import  { Navbar,
+         Nav,
+         Container, 
+         DropdownButton,
+         Dropdown}  from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import { signout } from '../redux/actions/userActions';
 
 const Styles = styled.div `
     a, .navbar-brand, .navbar-nav, .nav-link {
@@ -18,6 +23,12 @@ export function NaviBar(){
     const cart = useSelector(state => state.cart)
     const {cartItems} = cart
 
+    const userSignin = useSelector((state) => state.userSignin)
+    const {userInfo} = userSignin
+    const dispatch = useDispatch()
+    const signoutHandler = () => {
+        dispatch(signout())
+    }
     return(
         <>
             <Styles>
@@ -34,8 +45,19 @@ export function NaviBar(){
                                 <Nav.Link><Link to="/users">Users</Link></Nav.Link>
                             </Nav>
                             <Nav>
-                                <Nav.Link><Link to="/signin">Log In</Link></Nav.Link>
-                                <Nav.Link><Link to="/register">Sign In</Link></Nav.Link>
+                                {
+                                    userInfo ? (
+                                            <DropdownButton id="dropdown-basic-button" title={userInfo.name} variant="secondary">
+                                                <Dropdown.Item><Nav.Link><Link to="#">{userInfo.name}</Link></Nav.Link></Dropdown.Item>
+                                                <Dropdown.Item><Nav.Link><Link to="#signout" onClick={signoutHandler}>Sign Out</Link></Nav.Link></Dropdown.Item>
+                                                <Dropdown.Item>Something else</Dropdown.Item>
+                                            </DropdownButton>
+                                    ) :
+                                    (
+                                        <Nav.Link><Link to="/signin">Sign In</Link></Nav.Link>
+                                    )
+                                }
+                                <Nav.Link><Link to="/register">Log In</Link></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

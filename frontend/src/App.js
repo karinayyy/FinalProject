@@ -9,10 +9,10 @@ import {
   Link
 } from 'react-router-dom'
 
-import {Home} from './Pages/Home'
-import {Users} from './Pages/Users'
-import {Product} from './Pages/Product'
-import {Cart} from './Pages/Cart'
+import {Home}     from './Pages/Home'
+import {Users}    from './Pages/Users'
+import {Product}  from './Pages/Product'
+import {Cart}     from './Pages/Cart'
 import { Signin } from './Pages/Signin';
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
         <NaviBar />
 
         <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/users" component={Users} />
-            <Route path="/signin" component={Signin} />
+            <Route exact path="/"       component={Home} />
+            <Route path="/users"        component={Users} />
+            <Route path="/signin"       component={Signin} />
             <Route path="/product/:id?" component={Product} />
-            <Route path="/cart/:id?" component={Cart} />
+            <Route path="/cart/:id?"    component={Cart} />
         </Switch>
       </Router>
     </>
