@@ -15,6 +15,7 @@ import {Product}  from './Pages/Product'
 import {Cart}     from './Pages/Cart'
 import {Signin}   from './Pages/Signin';
 import {Register} from './Pages/Register';
+import {Profile} from './Pages/Profile';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/register"     component={Register} />
             <Route path="/product/:id?" component={Product} />
             <Route path="/cart/:id?"    component={Cart} />
+            <Route path="/profile"      component={Profile} />
         </Switch>
       </Router>
     </>
