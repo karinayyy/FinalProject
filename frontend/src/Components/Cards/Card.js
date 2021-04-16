@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 
 export default function CardItem(props){
-    const { product } = props
+    const {product} = props
     return(
             <Col>
                 <Card  key={product._id}>
