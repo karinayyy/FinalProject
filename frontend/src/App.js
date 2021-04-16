@@ -13,6 +13,7 @@ import {Home} from './Pages/Home'
 import {Users} from './Pages/Users'
 import {Product} from './Pages/Product'
 import {Cart} from './Pages/Cart'
+import { Signin } from './Pages/Signin';
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
         <NaviBar />
 
         <Switch>
-            <Route path="/users" component={Users} />
             <Route exact path="/" component={Home} />
-            <Route path="/product/:id" component={Product} />
+            <Route path="/users" component={Users} />
+            <Route path="/signin" component={Signin} />
+            <Route path="/product/:id?" component={Product} />
             <Route path="/cart/:id?" component={Cart} />
         </Switch>
       </Router>
