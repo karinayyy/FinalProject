@@ -7,8 +7,7 @@ export default function CardItem(props){
     const { product } = props
     return(
             <Col>
-                <Card style={{ width: '18rem',
-                                height: '30rem'}} key={product._id}>
+                <Card  key={product._id}>
                     <Card.Img variant="top" src={product.image} rounded/>
                     <Card.Body style={{
                                 display: 'flex',
@@ -19,7 +18,7 @@ export default function CardItem(props){
                         <Card.Text>
                         {product.description}
                         </Card.Text>
-                        <Link to={`/product/${product._id}`}><Button variant="outline-info" style={{float: 'right'}}> Go somewhere</Button></Link>
+                        <Link to={`/product/${product._id}`}><Button variant="outline-info" style={{float: 'right'}}>View more</Button></Link>
                     </Card.Body>
                 </Card>
             </Col>

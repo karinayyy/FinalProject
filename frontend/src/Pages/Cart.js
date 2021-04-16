@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Container, Row, Col, Card, Image, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import MessageBox from '../Components/MessageBox'
@@ -24,26 +25,26 @@ export const Cart = (props) => {
         props.history.push('/signin?redirect=shipping')
     }
     return( 
-        <div>
-            <div>
-                <h1>Shopping Cart</h1>
-                {cartItems.length === 0 
-                ? <MessageBox> 
-                    Cart is empty. <Link to="/">Go Shopping</Link>
-                 </MessageBox>
-                : (
-                    <ul>
-                        {
-                            cartItems.map((item) => (
-                                <li key={item.product}>
-                                    <div>
-                                        <div>
-                                            <img src={item.image} alt={item.name} />
-                                        </div>
-                                        <div>
+        <Container>
+                    <h3>Shopping Cart</h3>
+            <Row>
+                <Col>
+                    {cartItems.length === 0 
+                    ? <MessageBox> 
+                        Cart is empty. <Link to="/">Go Shopping</Link>
+                    </MessageBox>
+                    : (
+                        <Row style={{'display':'flex','flexDirection':'row'}}>
+                            {
+                                cartItems.map((item) => (
+                                    <Row key={item.product}>
+                                        <Col>
+                                            <Image style={{'width':'50%'}} src={item.image} alt={item.name}  />
+                                        </Col>
+                                        <Col>
                                             <Link to={`/product/${item.product}`}>{item.name}</Link>
-                                        </div>
-                                        <div>
+                                        </Col>
+                                        <Col>
                                             <select value={item.quantity} 
                                                     onChange={e => dispatch(addToCart(item.product, Number(e.target.value))
                                                     )} >
@@ -53,38 +54,29 @@ export const Cart = (props) => {
                                                     ))
                                                 }
                                             </select>
-                                        </div>
-                                        <div>
                                             ${item.price}
-                                        </div>
-                                        <div>
-                                            <button type="button" onClick={() => removeFromCartHandler(item.product)} >Delete</button>
-                                        </div>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                )
-                }
-            </div>
-            <div>
-                <div>
-                    <ul>
-                        <li>
-                            <h2>
-                                Subtotal ({cartItems.reduce((a,c) => a + c.quantity, 0)} items) : 
-                                ${cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
-                            </h2>
-                        </li>
-                        <li>
-                            <button type="button" onClick={checkoutHandler} disabled={cartItems.length === 0}>
+                                        </Col>
+                                        <Col>
+                                            <Button variant="outline-secondary" onClick={() => removeFromCartHandler(item.product)} >Delete</Button>
+                                        </Col>
+                                    </Row>
+                                ))
+                            }
+                        </Row>
+                    )
+                    }
+                    <Row>
+                        <Col>
+                            Subtotal ({cartItems.reduce((a,c) => a + c.quantity, 0)} items) : 
+                            ${cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
+                            
+                            <Button variant="info" onClick={checkoutHandler} disabled={cartItems.length === 0}>
                                 Proceed to Checkout
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                            </Button>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+        </Container>
     )
 }

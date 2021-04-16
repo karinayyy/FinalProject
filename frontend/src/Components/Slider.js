@@ -8,7 +8,7 @@ import photo4 from '../images/s-1.jpg'
 export default function Slider(){
     return(
         <Carousel>
-            <Carousel.Item style={{'height': '50vh'}}>
+            <Carousel.Item>
                 <img 
                     className="d-block w-100"
                     src={photo1}
@@ -19,7 +19,7 @@ export default function Slider(){
                     <p>Lorem ipsum</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item style={{'height': '50vh'}}>
+            <Carousel.Item>
                 <img 
                     className="d-block w-100"
                     src={photo2}
@@ -30,7 +30,7 @@ export default function Slider(){
                     <p>Lorem ipsum</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item style={{'height': '50vh'}}>
+            <Carousel.Item>
                 <img 
                     className="d-block w-100"
                     src={photo3}
@@ -41,7 +41,7 @@ export default function Slider(){
                     <p>Lorem ipsum</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item style={{'height': '50vh'}}>
+            <Carousel.Item>
                 <img 
                     className="d-block w-100"
                     src={photo4}

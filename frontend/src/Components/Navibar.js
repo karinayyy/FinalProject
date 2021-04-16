@@ -40,7 +40,10 @@ export function NaviBar(){
                             <Nav className="mr-auto">
                                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
                                 <Nav.Link><Link to="/cart">Cart 
-                                                            {cartItems.length > 0 && (<span>{cartItems.length}</span>)}
+                                                            {cartItems.length > 0 && (<span style={{'margin': '0.1rem', 
+                                                                                                    'padding': '0.2rem',
+                                                                                                    'fontSize': '14px',
+                                                                                                    'color':'red'}}>{cartItems.length}</span>)}
                                 </Link></Nav.Link>
                                 <Nav.Link><Link to="/users">Users</Link></Nav.Link>
                             </Nav>

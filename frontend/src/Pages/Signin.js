@@ -28,7 +28,7 @@ export const Signin = (props) =>{
         <Container>
             <Form onSubmit={submitHandler}>
                 {loading && <LoadingBox></LoadingBox> }
-                {error && <MessageBox>{error}</MessageBox>}
+                {error && <Button variant="outline-danger" disabled><MessageBox>{error}</MessageBox></Button>}
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" required onChange={(e) => setEmail(e.currentTarget.value)} />
