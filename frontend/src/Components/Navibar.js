@@ -53,7 +53,6 @@ export function NaviBar(){
                                             <DropdownButton id="dropdown-basic-button" title={userInfo.name} variant="secondary">
                                                 <Dropdown.Item><Nav.Link><Link to="/profile">{userInfo.name}</Link></Nav.Link></Dropdown.Item>
                                                 <Dropdown.Item><Nav.Link><Link to="#signout" onClick={signoutHandler}>Sign Out</Link></Nav.Link></Dropdown.Item>
-                                                <Dropdown.Item>Something else</Dropdown.Item>
                                             </DropdownButton>
                                     ) :
                                     (

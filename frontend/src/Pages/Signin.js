@@ -43,7 +43,7 @@ export const Signin = (props) =>{
                             onChange={(e) => setPassword(e.target.value)}/>
             </Form.Group>
             <Button variant="primary" type="submit">
-                Submit
+                Sign In
             </Button>
             New user?<Link to={`/register?redirect=${redirect}`}>Create account</Link>
             </Form>
